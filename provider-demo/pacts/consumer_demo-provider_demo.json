@@ -1,0 +1,54 @@
+{
+    "provider": {
+        "name": "provider_demo"
+    },
+    "consumer": {
+        "name": "consumer_demo"
+    },
+    "interactions": [
+        {
+            "description": "Get cities",
+            "request": {
+                "method": "GET",
+                "path": "/cities"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "Content-Type": "application/json;charset=utf-8"
+                },
+                "body": [
+                    {
+                        "name": "beijing",
+                        "personCount": 2000
+                    },
+                    {
+                        "name": "shenzhen",
+                        "personCount": 1500
+                    },
+                    {
+                        "name": "shanghai",
+                        "personCount": 1800
+                    },
+                    {
+                        "name": "hangzhou",
+                        "personCount": 1000
+                    },
+                    {
+                        "name": "wuhan",
+                        "personCount": 800
+                    }
+                ]
+            },
+            "providerState": "cites on the provider demo"
+        }
+    ],
+    "metadata": {
+        "pact-specification": {
+            "version": "2.0.0"
+        },
+        "pact-jvm": {
+            "version": "3.3.0"
+        }
+    }
+}
