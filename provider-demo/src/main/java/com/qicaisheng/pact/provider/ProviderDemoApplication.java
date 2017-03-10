@@ -19,7 +19,7 @@ public class ProviderDemoApplication {
 	public ProviderDemoApplication() {
 	}
 
-	@RequestMapping(value = "/cities", produces = "pplication/json;charset=UTF-8")
+	@RequestMapping(value = "/cities", produces = "application/json;charset=UTF-8")
 	public List<City> getCities() {
 		City beijing = new City("beijing", 2000);
 		City shenzhen = new City("shenzhen", 1500);
