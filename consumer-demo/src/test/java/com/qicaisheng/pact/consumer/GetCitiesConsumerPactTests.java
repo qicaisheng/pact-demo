@@ -35,7 +35,7 @@ public class GetCitiesConsumerPactTests {
         String body = objectMapper.writeValueAsString(cities);
 
         Map<String, String> headers = new HashMap<>();
-        headers.put("Content-Type", "application/json;charset=UTF-8");
+        headers.put("Content-Type", "application/json;charset=utf-8");
 
         return builder
             .given("cites on the provider demo")
