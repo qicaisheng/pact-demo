@@ -1,4 +1,5 @@
 # pact-demo
+[![Build Status](https://travis-ci.org/qicaisheng/pact-demo.svg?branch=master)](https://travis-ci.org/qicaisheng/pact-demo)
 
 Consumer-Driven Contracts Demo in Spring Boot and pact-jvm
 
