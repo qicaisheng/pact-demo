@@ -10,7 +10,6 @@ import au.com.dius.pact.provider.junit.target.TestTarget;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.restdriver.clientdriver.ClientDriverRule;
-import org.junit.Before;
 import org.junit.ClassRule;
 import org.junit.runner.RunWith;
 
@@ -26,16 +25,8 @@ public class GetCitiesProviderPactTests {
     @ClassRule
     public static final ClientDriverRule embeddedService = new ClientDriverRule(8090);
 
-    @State("cites on the provider demo")
-    public void toDefaultState() {
-    }
-
-    @TestTarget // Annotation denotes Target that will be used for tests
-    public final Target target = new HttpTarget(8090);
-
-
-    @Before
-    public void before() throws JsonProcessingException {
+    @State("contract for consumer getting cities")
+    public void toVerifiesConsumerGettingCities() throws JsonProcessingException {
         ProviderDemoApplication providerDemoApplication = new ProviderDemoApplication();
         List<City> cities = providerDemoApplication.getCities();
         ObjectMapper mapper = new ObjectMapper();
@@ -45,4 +36,7 @@ public class GetCitiesProviderPactTests {
                 onRequestTo("/cities"), giveResponse(body, "application/json;charset=utf-8")
         );
     }
+
+    @TestTarget // Annotation denotes Target that will be used for tests
+    public final Target target = new HttpTarget(8090);
 }

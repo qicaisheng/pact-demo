@@ -38,7 +38,7 @@ public class GetCitiesConsumerPactTests {
         headers.put("Content-Type", "application/json;charset=utf-8");
 
         return builder
-            .given("cites on the provider demo")
+            .given("contract for consumer getting cities")
             .uponReceiving("Get cities")
                 .path("/cities")
                 .method("GET")
